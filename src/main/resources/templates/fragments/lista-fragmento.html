@@ -1,0 +1,40 @@
+<div th:fragment="tabela">
+<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Nome da Peça</th>
+				<th>Cor</th>
+				<th>Data de Lançamento</th>
+				<th>Tipo da Peça</th>
+				<th>Código da Peça</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:if="${roupas.empty}">
+				<td colspan="2">Sem usuários</td>
+			</tr>
+			<tr th:each="roupa : ${roupas}">
+				<td><span th:text="${roupa.nomePeca}"> Nome da Peça </span></td>
+				<td><span th:text="${roupa.cor}"> Cor </span></td>
+				<td><span th:text="${#dates.format(roupa.dataLancamento, 'dd/MM/yyyy')}"> Data de Lançamento </span></td>
+				<td><span th:text="${roupa.tipo}"> Tipo da Peça </span></td>
+				<td><span th:text="${roupa.codPeca}"> Codigo da Peça </span></td>
+				<td>
+					<a class="btn btn-outline-danger btn-sm" 
+					   th:href="@{/admin/apagar/{id}(id=${roupa.id})}"
+					   th:data-confirm-delete="|Você gostaria de apagar ${roupa.nomePeca}?|"
+  					   onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false">
+					   Apagar
+					</a>
+				</td>
+				<td>
+					<a class="btn btn-outline-primary btn-sm" 
+					   th:href="@{/editar/{id}(id=${roupa.id})}">
+					    					   
+					   Editar
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>  
+	</div>

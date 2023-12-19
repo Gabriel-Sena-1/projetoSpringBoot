@@ -1,0 +1,53 @@
+<div th:fragment="form">
+<div class="row mb-3" >
+			    <label class="col-sm-2 col-form-label">Nome da Peça:</label>
+			    <div class="col-sm-5">
+			    	<input class="form-control" type="text" th:field="*{nomePeca}"> 
+			    </div>
+			    <div class="col-sm-5"> 
+			    	<span class="mensagem" th:if="${#fields.hasErrors('nomePeca')}" th:errors="*{nomePeca}"></span>
+			    </div>				
+			</div>
+			
+			<div class="row mb-3">
+			    <label class="col-sm-2 col-form-label">Cor:</label>
+			    <div class="col-sm-3">
+			    	<input class="form-control" type="text" th:field="*{cor}"> 
+			    </div>
+				<div class="col-sm-5"> 
+			    	<span class="mensagem" th:if="${#fields.hasErrors('cor')}" th:errors="*{cor}"></span>
+			    </div>
+			</div>
+			
+			
+			<div class="row mb-3">
+			    <label class="col-sm-2 col-form-label">Lançamento:</label>
+			    <div class="col-sm-2">
+			    	<input class="form-control" type="text" th:field="*{dataLancamento}"> 
+			    </div>
+				<div class="col-sm-5"> 
+			    	<span class="mensagem" th:if="${#fields.hasErrors('dataLancamento')}" th:errors="*{dataLancamento}"></span>
+			    </div>
+			</div>
+			
+			
+			<div class="row mb-3">
+			    <label class="col-sm-2 col-form-label">Tipo de peça:</label>
+			    <div class="col-sm-2">
+			    	<input class="form-control" type="text" th:field="*{tipo}"> 
+			    </div>
+				<div class="col-sm-5"> 
+			    	<span class="mensagem" th:if="${#fields.hasErrors('tipo')}" th:errors="*{tipo}"></span>
+			    </div>
+			</div>			
+			
+			<div class="row mb-3">
+			    <label class="col-sm-2 col-form-label">Código da peça:</label>
+			    <div class="col-sm-2">
+			    	<input class="form-control" type="text" th:field="*{codPeca}"> 
+			    </div>
+				<div class="col-sm-5"> 
+			    	<span class="mensagem" th:if="${#fields.hasErrors('codPeca')}" th:errors="*{codPeca}"></span>
+			    </div>
+			</div>
+</div>
